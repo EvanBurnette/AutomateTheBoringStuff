@@ -1,0 +1,8 @@
+github concepts:
+git add - add a file to be tracked
+git commit - commit initializes a file or
+saves changes to a new version of the file
+git clone <URL> //copy a repo to your computer
+fork - creates a copy of a project on Githun
+git branch 
+upstream
