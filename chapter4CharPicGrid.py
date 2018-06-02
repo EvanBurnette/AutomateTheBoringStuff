@@ -1,6 +1,3 @@
-#! python3
-
-
 def listToPicGrid(listArg):
     """Turn a list of lists into printed strings in output."""
     for i in range(len(listArg[0])):
