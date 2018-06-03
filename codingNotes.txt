@@ -3,6 +3,19 @@ git add - add a file to be tracked
 git commit - commit initializes a file or
 saves changes to a new version of the file
 git clone <URL> //copy a repo to your computer
-fork - creates a copy of a project on Githun
-git branch 
+fork - creates a copy of a project on Github
+git branch
 upstream
+
+escape characters:
+\'
+\"
+\t    tab
+\n    newline
+\\    backslash
+
+raw strings ignore escape characters
+>>>print(r'That is Carol\'s cat.')
+That is Carol\'s cat.
+
+to reverse a string: userString[::-1], userString[start:end:step]
