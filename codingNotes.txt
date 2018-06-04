@@ -6,6 +6,7 @@ git clone <URL> //copy a repo to your computer
 fork - creates a copy of a project on Github
 git branch
 upstream
+in vim: i to insert, esc then :wq to save and exit
 
 escape characters:
 \'
@@ -19,3 +20,18 @@ raw strings ignore escape characters
 That is Carol\'s cat.
 
 to reverse a string: userString[::-1], userString[start:end:step]
+
+startswith()
+endswith()
+
+', '.join(listOfStrings)
+userString.split(optional delimeter) = list of strings, whitespace is default delimeter
+list(userString) = cast a string into a list of characters
+
+'hello'.rjust(20)
+.ljust(20)
+.center(20)
+
+>>>'    hello    '.strip()
+    'hello'
+.lstrip(), .rstrip()

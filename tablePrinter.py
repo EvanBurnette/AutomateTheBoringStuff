@@ -2,7 +2,6 @@
 """TablePrinter.py takes a list of lists of strings and displays it in
 right justified columns."""
 
-
 def maxWordLength(wordList):
     longestWord = 0
     for i in range(len(wordList)):
