@@ -75,3 +75,5 @@ I attempted a lookaround to avoid matching subsets of numbers ie 4 out of 1234
 21.fullNakamotoRe = re.compile(r'''[A-Z][a-zA-Z]+ Nakamoto''')
 
 22. sentenceRe = re.compile(r'''(Alice|Bob|Carol) (eats|pets|throws) (apples|cats|baseballs)(.)''', re.IGNORECASE)
+
+        Lots of space        
