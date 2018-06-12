@@ -1,0 +1,24 @@
+Automate: Phone Number and Email Extractor Outline
+
+1. Get text off the clipboard.
+
+    1.Use pyperclip module to copy and paste strings.
+
+2. Find all phone numbers and email addresses in the text.
+
+    1. Create two regexes
+
+      1. Regex for phone number matching
+      2. Regex for email address matching
+      3. Find all matches for both
+
+3. Paste them onto the clipboard.
+
+    1. Format search results in a neat strings
+
+4. Display a message if no matches are found in text
+
+info@nostarch.com
+media@nostarch.com
+academic@nostarch.com
+info@nostarch.com

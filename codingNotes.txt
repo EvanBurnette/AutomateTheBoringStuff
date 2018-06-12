@@ -3,6 +3,77 @@ git add - add a file to be tracked
 git commit - commit initializes a file or
 saves changes to a new version of the file
 git clone <URL> //copy a repo to your computer
-fork - creates a copy of a project on Githun
-git branch 
+fork - creates a copy of a project on Github
+git branch
 upstream
+in vim: i to insert, esc then :wq to save and exit
+
+escape characters:
+\'
+\"
+\t    tab
+\n    newline
+\\    backslash
+
+raw strings ignore escape characters
+>>>print(r'That is Carol\'s cat.')
+That is Carol\'s cat.
+
+to reverse a string: userString[::-1], userString[start:end:step]
+
+startswith()
+endswith()
+
+', '.join(listOfStrings)
+userString.split(optional delimeter) = list of strings, whitespace is default delimeter
+list(userString) = cast a string into a list of characters
+
+'hello'.rjust(20)
+.ljust(20)
+.center(20)
+
+>>>'    hello    '.strip()
+    'hello'
+.lstrip(), .rstrip()
+
+Plan program then write code, big picture first
+
+Practice Questions. Chapter 7.
+
+1 re.compile()
+2. Raw strings disable the escape character \ which is also used in many re symbols
+3. The search method returns the last found matching expression
+4. To get a matched string you must use mo.group(0)
+5. Group 0 is the whole matched object. Group 1 is the first parentheses. Group 2 is the second set.
+6. Escape with \ to match . and ()
+7. Findall returns a list of strings for single group patterns
+    Findall returns a list of tuples for multi group patterns
+8. | or pipe means or in regular expressions
+9. the ? character signifies an optional group or it tells re to match in a non-greedy way (if inside a group)
+10. + matches one or more of preceding group
+    * matches zero or more of preceding group
+    ? matches zero or one of preceding group
+11. {3} Matches exactly 3 of the preceding group. {3, 5} matches between 3 and 5 of preceding group
+12. \d digit 0-9, \w word character [a-zA-Z0-9_], \s whitespace character, tab, and newline
+13. \D nonDigit characters [^0-9], /W nonword characters [^a-zA-Z0-9], \S nonWhitespace characters
+14. add re.I or re.IGNORECASE as second argument
+15. . character matches anything except newline character. When re.DOTALL is used as second argument, . will also match newline characters
+16. .* matches the longest string it can before hitting \n except newline (greedy). .*? matches single characters except for newline (nongreedy)
+17. [a-z0-9]
+18. >>> X drummer, X pipers, five rings, X hens
+19. re.VERBOSE allows you to use multiline regular expressions
+20. commaNumRe = re.compile(r'''(?<!\d)
+                                (\d{1,3})
+                                (?!\d)
+                                (,\d{3})?
+                            ''', re.VERBOSE)
+I attempted a lookaround to avoid matching subsets of numbers ie 4 out of 1234
+
+21.fullNakamotoRe = re.compile(r'''([A-Z][a-zA-Z]\s)
+                                    (Nakamoto)''', re.VERBOSE)
+
+21.fullNakamotoRe = re.compile(r'''[A-Z][a-zA-Z]+ Nakamoto''')
+
+22. sentenceRe = re.compile(r'''(Alice|Bob|Carol) (eats|pets|throws) (apples|cats|baseballs)(.)''', re.IGNORECASE)
+
+        Lots of space        
