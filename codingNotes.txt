@@ -76,4 +76,12 @@ I attempted a lookaround to avoid matching subsets of numbers ie 4 out of 1234
 
 22. sentenceRe = re.compile(r'''(Alice|Bob|Carol) (eats|pets|throws) (apples|cats|baseballs)(.)''', re.IGNORECASE)
 
-        Lots of space        
+        Lots of space
+
+format string:
+h = 'hello'
+w = 'world'
+print('%s %s' %(h, w))
+>>>hello world
+
+'%003d' % () #format output of single digit+ numbers to pad with leading zeros
