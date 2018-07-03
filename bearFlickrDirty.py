@@ -3,21 +3,26 @@
 import os, re, pprint
 import requests
 
-print(os.getcwd())
+import sys
+import codecs
 
-page = open('flickrtest.html')
+sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+#sys.stderr = codecs.getwriter('utf8')(sys.stderr)
 
+os.chdir('/home/evan/Downloads/MyPrograms/')
+newDir = 'bear'
+if os.path.isdir(newDir) == False:
+    os.mkdir(newDir)
+os.chdir(newDir)
 
+page = requests.get('http://www.flickr.com/search/?text=bear').text
 
 #find all jpg links
-jpgRe = re.compile('c1.staticflickr.com.*jpg', re.UNICODE)
-linkList = jpgRe.findall(page.read().decode('utf-8'), re.UNICODE)
-print(len(linkList))
-pprint.pprint(linkList)
-page.close()
+jpgRe = re.compile('''c1.staticflickr.com.*jpg''', re.UNICODE)
+linkList = jpgRe.findall(page, re.UNICODE)
 
 for link in linkList:
-    image = requests.get('http:' + link)
-    imgfile = open(os.basename(link), 'wb')
-    for chunk in image.iter_contents(100000):
-        file.write(chunk)
+    image = requests.get('http://' + link)
+    imgFile = open(os.path.basename(link), 'wb')
+    for chunk in image.iter_content(100000):
+        imgFile.write(chunk)
