@@ -76,4 +76,113 @@ I attempted a lookaround to avoid matching subsets of numbers ie 4 out of 1234
 
 22. sentenceRe = re.compile(r'''(Alice|Bob|Carol) (eats|pets|throws) (apples|cats|baseballs)(.)''', re.IGNORECASE)
 
-        Lots of space        
+        Lots of space
+
+format string:
+h = 'hello'
+w = 'world'
+print('%s %s' %(h, w))
+>>>hello world
+
+'%003d' % () #format output of single digit+ numbers to pad with leading zeros
+
+Chapter 9 Practice Questions:
+1. assert spam >= 10, 'spam should be greater than 10'
+2.  eggs = 'hello'
+    bacon = 'helLO'
+    assert eggs.lower() != bacon.lower(), 'bacon and eggs should not be assigned the same word'
+3. assert False, 'always trigger this assertion'
+4. import logging
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+5. import logging
+logging.basicConfig(filename='programLog.txt', level=logging.DEBUG, format='%asctime)s - %(levelname)s - %(message)s')
+6. The five logging levels are 1. Debug, 2. INFO 3. Warning 4. Error 5. Critical
+7. logging.disable(logging.CRITICAL)
+8. logging messages can be disabled in one line whereas print statements might serve other purposes
+9. Step walks one line of code at a time including inside functions
+Over skips over function calls to the next line in the code
+Out executes as quickly as possible till it returns from the current function
+Quit turns off debug mode
+10. For Go, the debugger only stops on breakpoints
+11. A breakpoint stops the debugger
+12. Right click to set a breakpoint
+
+~ is the user's home folder
+
+Chapter 11 (webscraping) quiz
+1. webbrowser just opens a webbrowser passing it a url
+requests downloads a webpage
+BeautifulSoup parses webpages
+selenium controls a webbrowser on the machine
+
+2. requests.get() returns a binary html file that needs to be encoded to be accessed as a string
+
+3. res.status_code == requests.codes.ok tells you that request.get() succeeded
+
+4. res.status_code
+
+5. To save a file from requests:
+file = open('filename.txt', 'wb')
+for chunk in res.iter_content(100000):
+    file.write(chunk)
+
+
+
+6. What is the keyboard shortcut for opening a browser’s developer tools?
+
+Ctrl+Shift+i
+
+7. How can you view (in the developer tools) the HTML of a specific element on a web page?
+
+Right on element and left click on inspect element in context menu
+
+8. What is the CSS selector string that would find the element with an id attribute of main?
+
+soup.select('#main')
+
+9. What is the CSS selector string that would find the elements with a CSS class of highlight?
+
+soup.select('.hightlight')
+
+10. What is the CSS selector string that would find all the <div> elements inside another <div> element?
+
+soup.select('div div')
+
+11. What is the CSS selector string that would find the <button> element with a value attribute set to favorite?
+
+soup.select('button #favorite')
+
+12. Say you have a Beautiful Soup Tag object stored in the variable spam for the element <div>Hello world!</div>.
+How could you get a string 'Hello world!' from the Tag object?
+
+elems = soup.select('#tag')
+elems[0].getText()
+
+13. How would you store all the attributes of a Beautiful Soup Tag object in a variable named linkElem?
+
+linkElem = elems.attrs
+
+14. Running import selenium doesn’t work. How do you properly import the selenium module?
+
+from selenium import webdriver
+(must install gecko driver for firefox or other drivers for other browsers)
+
+15. What’s the difference between the find_element_* and find_elements_* methods?
+
+find_element_* only finds the first one and find_elements returns a list of all elements in a page
+
+16. What methods do Selenium’s WebElement objects have for simulating mouse clicks and keyboard keys?
+
+from selenium.webdriver.common.keys import Keys
+
+17. You could call send_keys(Keys.ENTER) on the Submit button’s WebElement object, but what is an easier way to submit a form with Selenium?
+
+WebElement.submit()
+
+18. How can you simulate clicking a browser’s Forward, Back, and Refresh buttons with Selenium?
+
+Keys.forward(), Keys.back(), keys.refresh()
+
+dealing with unicode:
+s = unicode(your_object).encode('utf8')
+f.write(s)
