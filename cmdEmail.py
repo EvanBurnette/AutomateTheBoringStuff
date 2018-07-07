@@ -1,6 +1,7 @@
 import os, sys, time, json, re
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 
 def validateEmail(email):
     emailRe = re.compile(r'''([a-zA-Z0-9.])+
@@ -15,6 +16,7 @@ def validateEmail(email):
 
 if validateEmail(sys.argv[1]):
     print('Recipient email is valid')
+    print('Opening gmail')
 else:
     print('Recipient email should be first argument after program name')
     print('python cmdEmail.py <EmailOfRecipient@site.com> "Subject of message" "Message in quotes"')
@@ -55,9 +57,10 @@ subjectField.send_keys(sys.argv[2])
 
 messageBody = browser.find_element_by_xpath("//div[@aria-label='Message Body']")
 messageBody.send_keys(sys.argv[3])
+time.sleep(1)
 
-sendButton = browser.find_element_by_xpath("//div[@aria-label='Send (Ctrl-Enter)']")
-sendButton.click()
+body = browser.find_element_by_tag_name('body')
+ActionChains(browser).key_down(Keys.CONTROL).send_keys(Keys.ENTER).key_up(Keys.CONTROL).perform()
 time.sleep(1)
 
 userButton = browser.find_element_by_class_name("gbii")
